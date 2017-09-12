@@ -1,0 +1,19 @@
+source 'https://rubygems.org'
+
+ruby '2.2.2'
+gem 'rack'
+gem 'rack-test'
+gem 'sinatra', '2.0.0'
+gem 'json'
+gem 'activesupport'
+gem 'active_model_serializers'
+
+group :test do
+  gem 'rspec', '3.6'
+  gem "rack-test"
+  gem 'rspec-expectations', '3.6'
+end
+
+group :development do
+  gem 'pry-byebug'
+end
