@@ -3,6 +3,7 @@ Api criada para test (Sinatra)
 
 Json para envio (POST => /compra)
 
+```json
 {
   "financeira": "Bradesco",
   "valorFinanciamento": 45000,
@@ -30,3 +31,4 @@ Json para envio (POST => /compra)
     ]
   }
 }
+```
