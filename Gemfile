@@ -7,6 +7,7 @@ gem 'sinatra', '2.0.0'
 gem 'json'
 gem 'activesupport'
 gem 'active_model_serializers'
+gem 'brazilian_documents', '~> 0.1.2'
 
 group :test do
   gem 'rspec', '3.6'
