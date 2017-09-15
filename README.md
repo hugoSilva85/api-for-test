@@ -1,5 +1,5 @@
 # api-for-test
-Api criada para test (Sinatra)
+Api criada para teste (Sinatra)
 
 Json para envio (POST => /compra)
 
@@ -10,21 +10,21 @@ Json para envio (POST => /compra)
   "parcelas": 36,
   "jurosMes": 1.5,
   "interessado": {
-    "nome": 5,
+    "nome": "Hugo Silva",
     "idade": 18,
     "cpf": "5555666677778884",
     "endereco": [
       {	
       	"tipoEndereco":"Comercial",
-        "rua": 5,
+        "rua": "Av Faria Lima",
         "numero": 18,
-        "bairro": "itaquera",
+        "bairro": "Cidade Jardim",
         "estado": "Sao Paulo"
       },
       {
       	"tipoEndereco":"Residencial",
-        "rua": 5,
-        "numero": 18,
+        "rua": "Forte de Sao Marcos",
+        "numero": 34,
         "bairro": "itaquera",
         "estado": "Sao Paulo"
       }
