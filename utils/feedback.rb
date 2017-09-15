@@ -1,29 +1,19 @@
 require 'br_documents'
+require './utils/errors'
+require './utils/valid'
 
 class Feedback
   def self.resposta_fianceira(json)
-    resposta_false = '{
-        "errors": [
-            {
-                "code": "CPF-001",
-                "path": "interessado.cpf",
-                "description": "CPF INCORRETO"
-            }
-        ]
-    }'
-
-    resposta_true = '{
-    "respostaAnalise": "Aguardar contato"
-    }'
-
     obj = json.interessado.cpf
-
     validacao = BRDocuments::CPF.valid?(obj)
 
+    valid = Valid.new
+    invalid = Errors.new
+
     if validacao
-      resposta_true
+      valid.cpf_valid
     else
-      resposta_false
+      invalid.cpf_error
     end
   end
 end
