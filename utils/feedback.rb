@@ -7,13 +7,13 @@ class Feedback
     obj = json.interessado.cpf
     validacao = BRDocuments::CPF.valid?(obj)
 
-    valid = Valid.new
-    invalid = Errors.new
+    valid_cpf = Valid.new.cpf_valid
+    invalid_cpf = Errors.new.cpf_error
 
     if validacao
-      valid.cpf_valid
+      valid_cpf
     else
-      invalid.cpf_error
+      invalid_cpf
     end
   end
 end
