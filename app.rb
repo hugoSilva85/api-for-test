@@ -5,12 +5,13 @@ require './utils/proposta'
 require './utils/feedback'
 require 'pry-byebug'
 
-
-set :port, 8080
+set :bind, '0.0.0.0'
 set :environment, :production
 
 get '/' do
-  Ferrari.composicao
+  response = Ferrari.composicao
+  json = JSON.parse(response)
+  JSON.pretty_generate(json.to_h)
 end
 
 post '/compra' do
@@ -18,5 +19,6 @@ post '/compra' do
   objeto_serealizado = Proposta.from_json(request_body)
 
   response = Feedback.resposta_fianceira(objeto_serealizado)
-  response.to_s
+  json = JSON.parse(response)
+  JSON.pretty_generate(json.to_h)
 end
