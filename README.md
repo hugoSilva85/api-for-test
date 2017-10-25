@@ -1,3 +1,7 @@
+# Levantar o Docker
+  docker-compose up --build
+  docker-compose down 
+  
 # api-for-test
 Api criada para teste (Sinatra)
 
