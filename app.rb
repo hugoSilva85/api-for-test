@@ -13,7 +13,7 @@ get '/carros' do
   content_type :json
   # matches "GET /carros?marca=ferrari&modelo=maranello"
   marca = params[:marca]
-
+  marca = marca.camelize
   response = marca.constantize.composicao
   json = JSON.parse(response)
   JSON.pretty_generate(json.to_h)
@@ -27,5 +27,5 @@ post '/compra' do
 
   response = Feedback.resposta_fianceira(objeto_serealizado)
   json = JSON.parse(response)
-  JSON.pretty_generate(response.to_h)
+  JSON.pretty_generate(json.to_h)
 end
